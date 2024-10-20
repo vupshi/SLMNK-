@@ -23,40 +23,12 @@
         </div>
         <div class="social-links">
             <a href="https://open.spotify.com/artist/525siLcTpPh7AiUTcPJUs8?si=vSQqAdjITWGGQiOsNGhYRg" target="_blank" class="btn">Spotify</a>
-            <!-- Перехід на сторінку виконавця в Spotify -->
-
             <a href="https://soundcloud.com/zhenya_optimist" target="_blank" class="btn">Soundcloud</a>
-            <!-- Перехід на сторінку виконавця в Soundcloud -->
-
             <a href="https://t.me/zhenya_optimist" target="_blank" class="btn">Telegram</a>
-            <!-- Перехід на канал виконавця в Telegram -->
-
             <a href="https://www.youtube.com/channel/UCK73-9UxUFlelqqAUKfaqUA" target="_blank" class="btn">YouTube</a>
-            <!-- Перехід на канал виконавця в YouTube -->
-
             <a href="https://www.tiktok.com/@zhenya_optimist" target="_blank" class="btn">TikTok</a>
-            <!-- Перехід на сторінку виконавця в TikTok -->
         </div>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            console.log("DOM загружен, перевіряємо стилі...");
-
-            // Перевіряємо фон
-            const body = document.body;
-            console.log("Колір фону:", window.getComputedStyle(body).backgroundColor);
-
-            // Перевіряємо колір тексту заголовка
-            const h1 = document.querySelector("h1");
-            console.log("Колір тексту заголовка:", window.getComputedStyle(h1).color);
-
-            // Перевіряємо колір тексту кнопок
-            const btns = document.querySelectorAll(".btn");
-            btns.forEach((btn, index) => {
-                console.log(`Колір тексту кнопки ${index + 1}:`, window.getComputedStyle(btn).color);
-            });
-        });
-    </script>
+    <script src="script.js"></script> <!-- Підключення JavaScript файлу -->
 </body>
 </html>
