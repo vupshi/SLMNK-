@@ -11,7 +11,7 @@
     <div class="container">
         <h1 class="glitch" data-text="SLMNK">SLMNK</h1>
         <div class="spotify-player">
-            <iframe src="https://open.spotify.com/track/1ULh943IZU23kuU1LbByDb?si=3fc5405937b745ae" width="300" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+            <iframe id="spotifyIframe" src="https://open.spotify.com/track/1ULh943IZU23kuU1LbByDb?si=3fc5405937b745ae" width="300" height="80" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
             <!-- Віджет плеєра Spotify для прослуховування треку -->
         </div>
         <div class="social-links">
@@ -31,5 +31,37 @@
             <!-- Перехід на сторінку виконавця в TikTok -->
         </div>
     </div>
+
+    <script>
+        // Логування початку завантаження плеєра
+        console.log("Завантаження iframe плеєра почалося");
+
+        // Отримуємо iframe елемент
+        const spotifyIframe = document.getElementById('spotifyIframe');
+
+        // Логування успішного завантаження
+        spotifyIframe.onload = function() {
+            console.log("Iframe плеєр успішно завантажений");
+        };
+
+        // Логування помилки при завантаженні плеєра
+        spotifyIframe.onerror = function() {
+            console.error("Помилка при завантаженні iframe плеєра");
+        };
+
+        // Перевірка підключення до інтернету
+        if (navigator.onLine) {
+            console.log("Інтернет-з'єднання активне");
+        } else {
+            console.error("Немає інтернет-з'єднання");
+        }
+
+        // Перевірка наявності Spotify плеєра
+        if (!spotifyIframe.src) {
+            console.error("Джерело iframe порожнє");
+        } else {
+            console.log("Джерело iframe: " + spotifyIframe.src);
+        }
+    </script>
 </body>
 </html>
