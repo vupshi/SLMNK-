@@ -38,5 +38,25 @@
             <!-- Перехід на сторінку виконавця в TikTok -->
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("DOM загружен, перевіряємо стилі...");
+
+            // Перевіряємо фон
+            const body = document.body;
+            console.log("Колір фону:", window.getComputedStyle(body).backgroundColor);
+
+            // Перевіряємо колір тексту заголовка
+            const h1 = document.querySelector("h1");
+            console.log("Колір тексту заголовка:", window.getComputedStyle(h1).color);
+
+            // Перевіряємо колір тексту кнопок
+            const btns = document.querySelectorAll(".btn");
+            btns.forEach((btn, index) => {
+                console.log(`Колір тексту кнопки ${index + 1}:`, window.getComputedStyle(btn).color);
+            });
+        });
+    </script>
 </body>
 </html>
