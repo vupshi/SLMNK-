@@ -13,174 +13,88 @@
 }
 
 body {
-    margin: 0; /* Відсутні відступи */
-    padding: 0; /* Відсутні поля */
-    font-family: 'Dhyana', Arial, sans-serif; /* Шрифт для тіла */
-    background-color: #282850; /* Змінений колір фону */
-    color: white; /* Білий колір тексту */
-    display: flex; /* Використання flex для центрування */
-    justify-content: center; /* Горизонтальне центрування */
-    align-items: center; /* Вертикальне центрування */
-    height: 100vh; /* Висота на весь екран */
-    text-transform: uppercase; /* Усе великі літери */
+    margin: 0;
+    padding: 0;
+    font-family: 'Dhyana', Arial, sans-serif;
+    background-color: #282850; /* Колір фону */
+    color: #FFFFFF; /* Колір тексту */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-transform: uppercase;
     font-size: 16px; /* Базовий розмір шрифта */
 }
 
 .container {
-    text-align: center; /* Вирівнювання тексту по центру */
+    text-align: center;
 }
 
 h1 {
-    font-family: 'DaMiOne', sans-serif; /* Шрифт для заголовка */
-    font-size: clamp(48px, 10vw, 144px); /* Адаптивний розмір шрифта */
-    margin-bottom: 20px; /* Менше відстань між заголовком і програвачем */
-    color: white; /* Білий колір заголовка */
-    letter-spacing: 10px; /* Збільшене відстань між літерами */
-    position: relative; /* Відносна позиція для глітч-ефекту */
-    animation: glitch 1s infinite; /* Анімація для глітч-ефекту */
-    text-transform: uppercase; /* Усе великі літери */
+    font-family: 'DaMiOne', sans-serif;
+    font-size: clamp(48px, 10vw, 144px);
+    margin-bottom: 20px;
+    color: #FFFFFF; /* Колір тексту заголовка */
+    letter-spacing: 10px;
+    position: relative;
+    animation: glitch 1s infinite;
+    text-transform: uppercase;
 }
 
 .social-links {
-    display: flex; /* Використання flex для списку посилань */
-    flex-direction: column; /* Вертикальне вирівнювання */
-    gap: 10px; /* Відстань між кнопками */
-    margin-top: 30px; /* Відстань між програвачем і посиланнями */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px; /* Відстань між плеєром і посиланнями */
 }
 
 .btn {
-    font-size: clamp(14px, 2vw, 18px); /* Адаптивний розмір шрифта кнопок */
-    color: white; /* Білий колір кнопок */
-    text-decoration: none; /* Відсутність підкреслення */
-    transition: text-decoration 0.3s; /* Анімація підкреслення при наведенні */
+    font-size: clamp(14px, 2vw, 18px);
+    color: #FFFFFF; /* Колір тексту кнопок */
+    text-decoration: none;
+    transition: text-decoration 0.3s;
 }
 
 .btn:hover {
-    text-decoration: underline; /* Підкреслення при наведенні */
+    text-decoration: underline;
 }
 
-/* Глітч-ефект */
+/* Глитч-ефект */
 .glitch {
-    position: relative; /* Відносна позиція для глітч-ефекту */
-    color: white; /* Білий колір для глітч-ефекту */
+    position: relative;
+    color: #FFFFFF;
 }
 
 .glitch:before,
 .glitch:after {
-    content: attr(data-text); /* Вміст з атрибута data-text */
-    position: absolute; /* Абсолютна позиція */
-    top: 0; /* Вирівнювання по верхньому краю */
-    left: 0; /* Вирівнювання по лівому краю */
-    width: 100%; /* Ширина на 100% */
-    height: 100%; /* Висота на 100% */
-    background: #282850; /* Колір фону для глітч-ефекту */
-    overflow: hidden; /* Приховати вихідний контент */
-    clip: rect(0, 900px, 0, 0); /* Відображення прямокутника */
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #282850;
+    overflow: hidden;
+    clip: rect(0, 900px, 0, 0);
 }
 
 .glitch:before {
-    left: 2px; /* Зсув вліво для глітч-ефекту */
-    text-shadow: -2px 0 #282850; /* Змінений колір тіні */
-    animation: glitch-anim 3s infinite linear alternate-reverse; /* Анімація глітча */
+    left: 2px;
+    text-shadow: -2px 0 white; /* Білий колір глитча */
+    animation: glitch-anim 3s infinite linear alternate-reverse; /* Більш інтенсивний глитч */
 }
 
 .glitch:after {
-    left: -2px; /* Зсув вправо для глітч-ефекту */
-    text-shadow: -2px 0 white; /* Білий колір тіні для глітча */
-    animation: glitch-anim2 3s infinite linear alternate-reverse; /* Анімація глітча */
+    left: -2px;
+    text-shadow: -2px 0 #FFFFFF;
+    animation: glitch-anim2 3s infinite linear alternate-reverse; /* Більш інтенсивний глитч */
 }
 
+/* Анімації глитча */
 @keyframes glitch-anim {
-    0% {
-        clip: rect(5px, 9999px, 45px, 0); /* Визначення частини, що відображається */
-        transform: skew(0.5deg); /* Зміщення по осі X */
-    }
-    10% {
-        clip: rect(30px, 9999px, 70px, 0); /* Зміна частини, що відображається */
-        transform: skew(0.3deg); /* Зміщення по осі X */
-    }
-    20% {
-        clip: rect(15px, 9999px, 85px, 0); /* Зміна частини, що відображається */
-        transform: skew(0.4deg); /* Зміщення по осі X */
-    }
-    30% {
-        clip: rect(60px, 9999px, 100px, 0); /* Зміна частини, що відображається */
-        transform: skew(0.2deg); /* Зміщення по осі X */
-    }
-    40% {
-        clip: rect(25px, 9999px, 110px, 0); /* Зміна частини, що відображається */
-        transform: skew(0.1deg); /* Зміщення по осі X */
-    }
-    50% {
-        clip: rect(50px, 9999px, 140px, 0); /* Зміна частини, що відображається */
-        transform: skew(-0.1deg); /* Зміщення по осі X */
-    }
-    60% {
-        clip: rect(70px, 9999px, 150px, 0); /* Зміна частини, що відображається */
-        transform: skew(-0.2deg); /* Зміщення по осі X */
-    }
-    70% {
-        clip: rect(30px, 9999px, 170px, 0); /* Зміна частини, що відображається */
-        transform: skew(-0.3deg); /* Зміщення по осі X */
-    }
-    80% {
-        clip: rect(100px, 9999px, 190px, 0); /* Зміна частини, що відображається */
-        transform: skew(-0.5deg); /* Зміщення по осі X */
-    }
-    90% {
-        clip: rect(80px, 9999px, 210px, 0); /* Зміна частини, що відображається */
-        transform: skew(-0.6deg); /* Зміщення по осі X */
-    }
-    100% {
-        clip: rect(50px, 9999px, 230px, 0); /* Зміна частини, що відображається */
-        transform: skew(-0.4deg); /* Зміщення по осі X */
-    }
+    /* Додайте тут ваші анімації */
 }
 
 @keyframes glitch-anim2 {
-    0% {
-        clip: rect(10px, 9999px, 55px, 0); /* Визначення частини, що відображається */
-        transform: skew(-0.5deg); /* Зміщення по осі X */
-    }
-    10% {
-        clip: rect(25px, 9999px, 75px, 0); /* Зміна частини, що відображається */
-        transform: skew(-0.3deg); /* Зміщення по осі X */
-    }
-    20% {
-        clip: rect(40px, 9999px, 95px, 0); /* Зміна частини, що відображається */
-        transform: skew(-0.4deg); /* Зміщення по осі X */
-    }
-    30% {
-        clip: rect(55px, 9999px, 115px, 0); /* Зміна частини, що відображається */
-        transform: skew(-0.2deg); /* Зміщення по осі X */
-    }
-    40% {
-        clip: rect(70px, 9999px, 135px, 0); /* Зміна частини, що відображається */
-        transform: skew(-0.1deg); /* Зміщення по осі X */
-    }
-    50% {
-        clip: rect(85px, 9999px, 155px, 0); /* Зміна частини, що відображається */
-        transform: skew(0.1deg); /* Зміщення по осі X */
-    }
-    60% {
-        clip: rect(100px, 9999px, 175px, 0); /* Зміна частини, що відображається */
-        transform: skew(0.2deg); /* Зміщення по осі X */
-    }
-    70% {
-        clip: rect(115px, 9999px, 195px, 0); /* Зміна частини, що відображається */
-        transform: skew(0.3deg); /* Зміщення по осі X */
-    }
-    80% {
-        clip: rect(130px, 9999px, 215px, 0); /* Зміна частини, що відображається */
-        transform: skew(0.5deg); /* Зміщення по осі X */
-    }
-    90% {
-        clip: rect(145px, 9999px, 235px, 0); /* Зміна частини, що відображається */
-        transform: skew(0.6deg); /* Зміщення по осі X */
-    }
-    100% {
-        clip: rect(160px, 9999px, 255px, 0); /* Зміна частини, що відображається */
-        transform: skew(0.4deg); /* Зміщення по осі X */
-    }
+    /* Додайте тут ваші анімації */
 }
-
